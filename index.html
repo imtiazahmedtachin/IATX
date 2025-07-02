@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IATX | All-in-One</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="fade-in">
+    <h1>IATX</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#blog">Blog</a>
+      <a href="#products">Products</a>
+      <a href="#contact">Contact</a>
+      <a href="#auth">Login</a>
+    </nav>
+    <div class="theme-toggle">
+      <label class="switch">
+        <input type="checkbox" id="toggle-theme">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </header>
+
+  <section id="home" class="section hero fade-in">
+    <h2>Welcome to IATX</h2>
+    <p>Your All-in-One Digital Space</p>
+  </section>
+
+  <section id="about" class="section fade-in">
+    <h2>About Us</h2>
+    <p>IATX is a multipurpose platform for personal, blog, and business ideas.</p>
+  </section>
+
+  <section id="blog" class="section fade-in">
+    <h2>Latest Posts</h2>
+    <div class="blog-preview">
+      <div class="blog-card">
+        <h3>🚀 How IATX Was Built</h3>
+        <p>This is a short intro about building the IATX site...</p>
+        <a href="blog.html#post1">Read More</a>
+      </div>
+      <div class="blog-card">
+        <h3>🌐 Tips for Creating a Great Website</h3>
+        <p>Simple tricks to improve your site’s design...</p>
+        <a href="blog.html#post2">Read More</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="products" class="section fade-in">
+    <h2>Our Products</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="images/product1.jpg" alt="Product 1">
+        <h3>Website Template</h3>
+        <p>A modern, responsive HTML template for your site.</p>
+        <span>$29</span>
+        <button>Buy Now</button>
+      </div>
+      <div class="product-card">
+        <img src="images/product2.jpg" alt="Product 2">
+        <h3>UI Design Pack</h3>
+        <p>Beautiful UI components ready for Figma or XD.</p>
+        <span>$19</span>
+        <button>Buy Now</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section fade-in">
+    <h2>Contact Us</h2>
+    <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <section id="auth" class="section fade-in">
+    <h2>Login / Register</h2>
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <div style="margin: 10px 0;">
+      <button onclick="register()">Register</button>
+      <button onclick="login()">Login</button>
+      <button onclick="logout()">Logout</button>
+    </div>
+    <p id="user-info"></p>
+  </section>
+
+  <footer class="fade-in">
+    <p>&copy; 2025 IATX. All rights reserved.</p>
+  </footer>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-auth.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+      projectId: "YOUR_PROJECT_ID",
+      appId: "YOUR_APP_ID"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+</body>
+</html>
