@@ -1,114 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>IATX | All-in-One</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IATX - Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Orbitron', sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+      color: white;
+      line-height: 1.6;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(20, 20, 20, 0.9);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      z-index: 1000;
+    }
+    nav h1 {
+      color: #0ff;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #0ff;
+    }
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 2rem;
+    }
+    .hero h2 {
+      font-size: 3rem;
+      color: #0ff;
+      text-shadow: 0 0 10px #0ff;
+    }
+    section {
+      padding: 4rem 2rem;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 2rem;
+      margin: 1rem 0;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    }
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #0ff;
+      text-align: center;
+      text-shadow: 0 0 5px #0ff;
+    }
+    .search-bar {
+      margin: 2rem auto;
+      display: flex;
+      justify-content: center;
+    }
+    .search-bar input {
+      padding: 0.5rem 1rem;
+      width: 60%;
+      border: none;
+      border-radius: 25px;
+      outline: none;
+      background: #222;
+      color: white;
+      box-shadow: 0 0 10px #0ff;
+    }
+    footer {
+      padding: 2rem;
+      text-align: center;
+      border-top: 1px solid #333;
+    }
+  </style>
 </head>
 <body>
-  <header class="fade-in">
+  <nav>
     <h1>IATX</h1>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#blog">Blog</a>
-      <a href="#products">Products</a>
-      <a href="#contact">Contact</a>
-      <a href="#auth">Login</a>
-    </nav>
-    <div class="theme-toggle">
-      <label class="switch">
-        <input type="checkbox" id="toggle-theme">
-        <span class="slider"></span>
-      </label>
-    </div>
-  </header>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#shop">Shop</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-  <section id="home" class="section hero fade-in">
-    <h2>Welcome to IATX</h2>
-    <p>Your All-in-One Digital Space</p>
+  <div class="hero" id="home">
+    <h2>Welcome to IATX - Your All-in-One Platform</h2>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" placeholder="Search..." />
+  </div>
+
+  <section id="about">
+    <h3 class="section-title">About Us</h3>
+    <div class="glass-card">We are IATX, a multi-purpose platform built to showcase your ideas, services, and products with style and power.</div>
   </section>
 
-  <section id="about" class="section fade-in">
-    <h2>About Us</h2>
-    <p>IATX is a multipurpose platform for personal, blog, and business ideas.</p>
+  <section id="services">
+    <h3 class="section-title">Our Services</h3>
+    <div class="glass-card">🌐 Web Design</div>
+    <div class="glass-card">📱 Mobile App Mockups</div>
+    <div class="glass-card">🎨 Branding & Graphics</div>
   </section>
 
-  <section id="blog" class="section fade-in">
-    <h2>Latest Posts</h2>
-    <div class="blog-preview">
-      <div class="blog-card">
-        <h3>🚀 How IATX Was Built</h3>
-        <p>This is a short intro about building the IATX site...</p>
-        <a href="blog.html#post1">Read More</a>
-      </div>
-      <div class="blog-card">
-        <h3>🌐 Tips for Creating a Great Website</h3>
-        <p>Simple tricks to improve your site’s design...</p>
-        <a href="blog.html#post2">Read More</a>
-      </div>
-    </div>
+  <section id="blog">
+    <h3 class="section-title">Latest Blog Posts</h3>
+    <div class="glass-card">🔹 How to Build a Brand in 2025</div>
+    <div class="glass-card">🔹 Dark Theme Design Trends</div>
   </section>
 
-  <section id="products" class="section fade-in">
-    <h2>Our Products</h2>
-    <div class="product-grid">
-      <div class="product-card">
-        <img src="images/product1.jpg" alt="Product 1">
-        <h3>Website Template</h3>
-        <p>A modern, responsive HTML template for your site.</p>
-        <span>$29</span>
-        <button>Buy Now</button>
-      </div>
-      <div class="product-card">
-        <img src="images/product2.jpg" alt="Product 2">
-        <h3>UI Design Pack</h3>
-        <p>Beautiful UI components ready for Figma or XD.</p>
-        <span>$19</span>
-        <button>Buy Now</button>
-      </div>
+  <section id="shop">
+    <h3 class="section-title">Our Products</h3>
+    <div class="glass-card">🛍️ Neon UI Kit</div>
+    <div class="glass-card">🛍️ Dark Mode Template</div>
+  </section>
+
+  <section id="contact">
+    <h3 class="section-title">Contact Us</h3>
+    <div class="glass-card">
+      <form>
+        <input type="text" placeholder="Your Name" required style="width: 100%; padding: 0.5rem; margin-bottom: 1rem; background: #111; color: white; border: 1px solid #333; border-radius: 10px;">
+        <input type="email" placeholder="Your Email" required style="width: 100%; padding: 0.5rem; margin-bottom: 1rem; background: #111; color: white; border: 1px solid #333; border-radius: 10px;">
+        <textarea placeholder="Message" rows="5" style="width: 100%; padding: 0.5rem; background: #111; color: white; border: 1px solid #333; border-radius: 10px;"></textarea>
+        <button type="submit" style="margin-top: 1rem; padding: 0.5rem 2rem; background: #0ff; border: none; border-radius: 25px; color: black; font-weight: bold; cursor: pointer;">Send</button>
+      </form>
     </div>
   </section>
 
-  <section id="contact" class="section fade-in">
-    <h2>Contact Us</h2>
-    <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
-
-  <section id="auth" class="section fade-in">
-    <h2>Login / Register</h2>
-    <input type="email" id="email" placeholder="Email">
-    <input type="password" id="password" placeholder="Password">
-    <div style="margin: 10px 0;">
-      <button onclick="register()">Register</button>
-      <button onclick="login()">Login</button>
-      <button onclick="logout()">Logout</button>
-    </div>
-    <p id="user-info"></p>
-  </section>
-
-  <footer class="fade-in">
+  <footer>
     <p>&copy; 2025 IATX. All rights reserved.</p>
   </footer>
-
-  <!-- Firebase SDKs -->
-  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-auth.js"></script>
-  <script>
-    const firebaseConfig = {
-      apiKey: "YOUR_API_KEY",
-      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-      projectId: "YOUR_PROJECT_ID",
-      appId: "YOUR_APP_ID"
-    };
-    firebase.initializeApp(firebaseConfig);
-  </script>
 </body>
 </html>
