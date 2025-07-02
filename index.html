@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IATX – All-in-One Platform</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a2e0e6b04e.js" crossorigin="anonymous"></script>
+  <style>
+    :root {
+      --main-color: #0ff;
+      --bg-color: #0f0f0f;
+      --text-color: #ffffff;
+      --glass-bg: rgba(255, 255, 255, 0.05);
+      --glass-border: rgba(255, 255, 255, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: all 0.3s ease;
+    }
+
+    video#bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 0.2;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(20, 20, 20, 0.95);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      z-index: 1000;
+    }
+
+    nav h1 {
+      color: var(--main-color);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: var(--main-color);
+    }
+
+    .theme-toggle {
+      cursor: pointer;
+      padding: 0.4rem 1rem;
+      background: var(--main-color);
+      color: black;
+      font-weight: bold;
+      border-radius: 10px;
+      border: none;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 2rem;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      color: var(--main-color);
+      text-shadow: 0 0 10px var(--main-color);
+    }
+
+    section {
+      padding: 4rem 2rem;
+    }
+
+    .glass-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 15px;
+      padding: 2rem;
+      margin: 1rem 0;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px var(--main-color);
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--main-color);
+      text-align: center;
+    }
+
+    .search-bar {
+      margin: 2rem auto;
+      display: flex;
+      justify-content: center;
+    }
+
+    .search-bar input {
+      padding: 0.5rem 1rem;
+      width: 60%;
+      border: none;
+      border-radius: 25px;
+      outline: none;
+      background: #222;
+      color: white;
+      box-shadow: 0 0 10px var(--main-color);
+    }
+
+    footer {
+      padding: 2rem;
+      text-align: center;
+      border-top: 1px solid #333;
+      margin-top: 2rem;
+    }
+
+    .scroll-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--main-color);
+      color: black;
+      border: none;
+      border-radius: 50%;
+      padding: 0.5rem 1rem;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <video autoplay muted loop id="bg-video">
+    <source src="https://www.videvo.net/videvo_files/converted/2023_07/preview/230701_01_4K_LogoReveal_06.mp453455.webm" type="video/webm">
+  </video>
+
+  <nav>
+    <h1>IATX</h1>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#shop">Shop</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+  </nav>
+
+  <div class="hero" id="home" data-aos="fade-up">
+    <h2><i class="fas fa-globe"></i> Welcome to IATX – Your All-in-One Platform</h2>
+  </div>
+
+  <div class="search-bar" data-aos="zoom-in">
+    <input type="text" id="searchInput" placeholder="Search blog or products..." onkeyup="searchContent()" />
+  </div>
+
+  <section id="about">
+    <h3 class="section-title" data-aos="fade-right">About Us</h3>
+    <div class="glass-card" data-aos="fade-up">We are IATX – a future-ready creative platform built to showcase your ideas, services, and digital products in one professional home.</div>
+  </section>
+
+  <section id="services">
+    <h3 class="section-title" data-aos="fade-left">Our Services</h3>
+    <div class="glass-card" data-aos="fade-up">🌐 Web Design</div>
+    <div class="glass-card" data-aos="fade-up">📱 Mobile App Design</div>
+    <div class="glass-card" data-aos="fade-up">🎨 Branding & Graphics</div>
+  </section>
+
+  <section id="blog">
+    <h3 class="section-title" data-aos="zoom-in">Latest Blog</h3>
+    <div class="glass-card searchable" data-aos="fade-up">🔹 Building Your Brand in 2025</div>
+    <div class="glass-card searchable" data-aos="fade-up">🔹 Dark Mode UX Design Tricks</div>
+  </section>
+
+  <section id="shop">
+    <h3 class="section-title" data-aos="fade-up">Digital Shop</h3>
+    <div class="glass-card searchable" data-aos="fade-up">🛍️ Neon UI Kit</div>
+    <div class="glass-card searchable" data-aos="fade-up">🛍️ Glassmorphism Template</div>
+  </section>
+
+  <section id="contact">
+    <h3 class="section-title" data-aos="fade-up">Contact Us</h3>
+    <div class="glass-card" data-aos="zoom-in">
+      <form action="https://formspree.io/f/mnqepepb" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required style="width: 100%; padding: 0.5rem; margin-bottom: 1rem; background: #111; color: white; border: 1px solid #333; border-radius: 10px;">
+        <input type="email" name="email" placeholder="Your Email" required style="width: 100%; padding: 0.5rem; margin-bottom: 1rem; background: #111; color: white; border: 1px solid #333; border-radius: 10px;">
+        <textarea name="message" placeholder="Message" rows="5" style="width: 100%; padding: 0.5rem; background: #111; color: white; border: 1px solid #333; border-radius: 10px;"></textarea>
+        <button type="submit" style="margin-top: 1rem; padding: 0.5rem 2rem; background: var(--main-color); border: none; border-radius: 25px; color: black; font-weight: bold; cursor: pointer;">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 IATX. All rights reserved.</p>
+  </footer>
+
+  <button class="scroll-top" onclick="scrollToTop()" id="scrollTopBtn">↑</button>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    function toggleTheme() {
+      if (document.body.style.backgroundColor === 'white') {
+        document.body.style.backgroundColor = '#0f0f0f';
+        document.body.style.color = '#ffffff';
+      } else {
+        document.body.style.backgroundColor = 'white';
+        document.body.style.color = '#000000';
+      }
+    }
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    window.onscroll = function() {
+      const btn = document.getElementById("scrollTopBtn");
+      if (document.documentElement.scrollTop > 200) {
+        btn.style.display = "block";
+      } else {
+        btn.style.display = "none";
+      }
+    }
+
+    function searchContent() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const items = document.querySelectorAll(".searchable");
+      items.forEach(item => {
+        item.style.display = item.textContent.toLowerCase().includes(input) ? "block" : "none";
+      });
+    }
+  </script>
+</body>
+</html>
