@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IATX - Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Orbitron', sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+      color: white;
+      line-height: 1.6;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(20, 20, 20, 0.9);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      z-index: 1000;
+    }
+    nav h1 {
+      color: #0ff;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #0ff;
+    }
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 2rem;
+    }
+    .hero h2 {
+      font-size: 3rem;
+      color: #0ff;
+      text-shadow: 0 0 10px #0ff;
+    }
+    section {
+      padding: 4rem 2rem;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 2rem;
+      margin: 1rem 0;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    }
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #0ff;
+      text-align: center;
+      text-shadow: 0 0 5px #0ff;
+    }
+    .search-bar {
+      margin: 2rem auto;
+      display: flex;
+      justify-content: center;
+    }
+    .search-bar input {
+      padding: 0.5rem 1rem;
+      width: 60%;
+      border: none;
+      border-radius: 25px;
+      outline: none;
+      background: #222;
+      color: white;
+      box-shadow: 0 0 10px #0ff;
+    }
+    footer {
+      padding: 2rem;
+      text-align: center;
+      border-top: 1px solid #333;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <h1>IATX</h1>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#shop">Shop</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero" id="home">
+    <h2>Welcome to IATX - Your All-in-One Platform</h2>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" placeholder="Search..." />
+  </div>
+
+  <section id="about">
+    <h3 class="section-title">About Us</h3>
+    <div class="glass-card">We are IATX, a multi-purpose platform built to showcase your ideas, services, and products with style and power.</div>
+  </section>
+
+  <section id="services">
+    <h3 class="section-title">Our Services</h3>
+    <div class="glass-card">🌐 Web Design</div>
+    <div class="glass-card">📱 Mobile App Mockups</div>
+    <div class="glass-card">🎨 Branding & Graphics</div>
+  </section>
+
+  <section id="blog">
+    <h3 class="section-title">Latest Blog Posts</h3>
+    <div class="glass-card">🔹 How to Build a Brand in 2025</div>
+    <div class="glass-card">🔹 Dark Theme Design Trends</div>
+  </section>
+
+  <section id="shop">
+    <h3 class="section-title">Our Products</h3>
+    <div class="glass-card">🛍️ Neon UI Kit</div>
+    <div class="glass-card">🛍️ Dark Mode Template</div>
+  </section>
+
+  <section id="contact">
+    <h3 class="section-title">Contact Us</h3>
+    <div class="glass-card">
+      <form>
+        <input type="text" placeholder="Your Name" required style="width: 100%; padding: 0.5rem; margin-bottom: 1rem; background: #111; color: white; border: 1px solid #333; border-radius: 10px;">
+        <input type="email" placeholder="Your Email" required style="width: 100%; padding: 0.5rem; margin-bottom: 1rem; background: #111; color: white; border: 1px solid #333; border-radius: 10px;">
+        <textarea placeholder="Message" rows="5" style="width: 100%; padding: 0.5rem; background: #111; color: white; border: 1px solid #333; border-radius: 10px;"></textarea>
+        <button type="submit" style="margin-top: 1rem; padding: 0.5rem 2rem; background: #0ff; border: none; border-radius: 25px; color: black; font-weight: bold; cursor: pointer;">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 IATX. All rights reserved.</p>
+  </footer>
+</body>
+</html>
