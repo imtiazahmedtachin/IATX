@@ -1,1 +1,0 @@
-console.log('IATX site loaded');
