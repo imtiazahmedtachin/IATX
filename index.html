@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>IATX – Maximum Top-Class Design</title>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </noscript>
+</head>
+<body>
+    <div class="loader">
+        <div class="loader-content">IATX</div>
+    </div>
+    
+    <div class="progress-container">
+        <div class="progress-bar"></div>
+    </div>
+
+    <nav aria-label="Main navigation">
+        <div><strong aria-label="IATX logo">IATX</strong></div>
+        <div role="navigation">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#resume">Resume</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section id="home">
+            <h1>Welcome to IATX</h1>
+            <div class='card'>Explore the elite black-and-white experience.</div>
+        </section>
+
+        <section id="about">
+            <h1>About IATX</h1>
+            <div class='card'>We are redefining professional design and visual excellence.</div>
+        </section>
+
+        <section id="services">
+            <h1>Services</h1>
+            <div class='grid'>
+                <div class='card'>Web Design</div>
+                <div class='card'>App UI/UX</div>
+                <div class='card'>Branding</div>
+            </div>
+        </section>
+
+        <section id="portfolio">
+            <h1>Portfolio</h1>
+            <div class='grid'>
+                <div class='card'>UI Kit</div>
+                <div class='card'>Landing Page</div>
+                <div class='card'>Brand Strategy</div>
+            </div>
+        </section>
+
+        <section id="resume">
+            <h1>Resume</h1>
+            <div class='grid'>
+                <div class='card'>Education: BSc in Computer Science</div>
+                <div class='card'>Experience: 5+ years in UI/UX</div>
+                <div class='card'>Tools: Figma, Webflow, VS Code</div>
+            </div>
+        </section>
+
+        <section id="testimonials">
+            <h1>Testimonials</h1>
+            <div class='grid'>
+                <div class='card'>"Professional and visually stunning!" – Sarah</div>
+                <div class='card'>"Next-level creativity and polish!" – Alex</div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h1>Contact</h1>
+            <div class='card'>
+                <form action="https://formspree.io/f/mnqepepb" method="POST">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required aria-required="true">
+                    
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required aria-required="true">
+                    
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Message" aria-required="false"></textarea>
+                    
+                    <button type="submit" aria-label="Send message">Send</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <footer>&copy; 2025 IATX – Maximum Top-Class Design</footer>
+    <button class="dark-toggle" onclick="toggleDarkMode()" aria-label="Toggle dark mode">🌓</button>
+    <div class="back-to-top" aria-hidden="true">↑</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
