@@ -4,27 +4,153 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>IATX – Maximum Top-Class Design</title>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="css/styles.css">
-    </noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0e0e0e;
+            --text: #ffffff;
+            --accent: #ffffff;
+            --glass: rgba(255, 255, 255, 0.05);
+            --border: rgba(255, 255, 255, 0.15);
+            --bg-light: #f9f9f9;
+            --bg-dark: #1e1e1e;
+            --text-light: #333;
+            --text-dark: #f9f9f9;
+            --primary: #0066cc;
+            --primary-hover: #004a99;
+        }
+        * {
+            margin: 0; padding: 0;
+            box-sizing: border-box;
+            font-family: 'Orbitron', sans-serif;
+        }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        nav {
+            background: #000;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #00ffff;
+        }
+        .container {
+            padding: 4rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+        h1, h2 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        .card {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        section {
+            margin-bottom: 4rem;
+            animation: fadeIn 1s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            color: #aaa;
+            border-top: 1px solid #222;
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 0.7rem;
+            margin-bottom: 1rem;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            color: var(--text);
+        }
+        button, .btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-family: 'Orbitron', sans-serif;
+        }
+        button:hover, .btn:hover {
+            background-color: var(--primary-hover);
+            transform: scale(1.03);
+        }
+        .dark-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 999;
+        }
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            nav a {
+                margin: 0.5rem 0;
+            }
+            .container {
+                padding: 2rem 1rem;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="loader">
-        <div class="loader-content">IATX</div>
-    </div>
-    
-    <div class="progress-container">
-        <div class="progress-bar"></div>
-    </div>
-
-    <nav aria-label="Main navigation">
-        <div><strong aria-label="IATX logo">IATX</strong></div>
-        <div role="navigation">
+    <nav>
+        <div><strong>IATX</strong></div>
+        <div>
             <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#services">Services</a>
@@ -85,25 +211,40 @@
             <h1>Contact</h1>
             <div class='card'>
                 <form action="https://formspree.io/f/mnqepepb" method="POST">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" placeholder="Your Name" required aria-required="true">
-                    
-                    <label for="email">Your Email</label>
-                    <input type="email" id="email" name="email" placeholder="Your Email" required aria-required="true">
-                    
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" placeholder="Message" aria-required="false"></textarea>
-                    
-                    <button type="submit" aria-label="Send message">Send</button>
+                    <input type="text" name="name" placeholder="Your Name" required><br>
+                    <input type="email" name="email" placeholder="Your Email" required><br>
+                    <textarea name="message" rows="5" placeholder="Message"></textarea><br><br>
+                    <button type="submit">Send</button>
                 </form>
             </div>
         </section>
     </div>
 
     <footer>&copy; 2025 IATX – Maximum Top-Class Design</footer>
-    <button class="dark-toggle" onclick="toggleDarkMode()" aria-label="Toggle dark mode">🌓</button>
-    <div class="back-to-top" aria-hidden="true">↑</div>
+    <button class="dark-toggle" onclick="toggleDarkMode()">🌓</button>
 
-    <script src="script.js"></script>
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            // Save preference to localStorage
+            const isDark = document.body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDark);
+        }
+
+        // Check for saved dark mode preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
